@@ -1,0 +1,10 @@
+service: () -> {
+    createAnimal: (text, text, int8, int8, text, text) -> (record {weight:int8; height:int8; diet:text; name:text; description:text; habitat:text; AnimalId:principal});
+    createPlant: (text, text, text, text) -> (record {name:text; size:text; PlantaId:principal; distribution:text; family:text});
+    deleteAnimal: (principal) -> (variant {Ok:record {weight:int8; height:int8; diet:text; name:text; description:text; habitat:text; AnimalId:principal}; Err:variant {AnimalDoesNotExist:principal}});
+    deletePlant: (principal) -> (variant {Ok:record {name:text; size:text; PlantaId:principal; distribution:text; family:text}; Err:variant {PlantDoesNotExist:principal}});
+    getAnimal: (principal) -> (opt record {weight:int8; height:int8; diet:text; name:text; description:text; habitat:text; AnimalId:principal}) query;
+    getPlant: (principal) -> (opt record {name:text; size:text; PlantaId:principal; distribution:text; family:text}) query;
+    updateAnimal: (principal, text, text, int8, int8, text, text) -> (variant {Ok:record {weight:int8; height:int8; diet:text; name:text; description:text; habitat:text; AnimalId:principal}; Err:variant {AnimalDoesNotExist:principal}});
+    updatePlant: (principal, text, text, text, text) -> (variant {Ok:record {name:text; size:text; PlantaId:principal; distribution:text; family:text}; Err:variant {PlantDoesNotExist:principal}});
+}

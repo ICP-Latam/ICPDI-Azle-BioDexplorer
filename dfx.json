@@ -1,0 +1,12 @@
+{
+    "canisters": {
+        "biodex": {
+            "type": "custom",
+            "main": "src/index.ts",
+            "candid": "src/index.did",
+            "build": "npx azle biodex",
+            "wasm": ".azle/biodex/biodex.wasm",
+            "gzip": true
+        }
+    }
+}
